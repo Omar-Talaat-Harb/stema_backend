@@ -9,6 +9,7 @@ class Cell extends Model
 {
     use HasFactory;
     protected $fillable=[
+        'approved_status',
         'quality_of_collection_bags_cleanness',
         'num_of_needles',
         'satellite_bag',
@@ -38,14 +39,14 @@ class Cell extends Model
         'post_average_viable_absolute_cd34_positive_cell_count',
         'post_average_viable_cd34_positive_cell_percentage',
         'post_count_of_cd34_positive_cell_preprocessing',
-        'test performed by',
+        'test_performed_by',
         'start_freezing_time',
         'end_freezing_time',
         'injection_start_time',
         'injection_end_time',
         'start_temperature',
         'end_point_temperature',
-        'doner id',
+        'doner_id',
     ];
 
     // protected $casts = [
@@ -91,4 +92,3 @@ class Cell extends Model
         }
     }
 }
-

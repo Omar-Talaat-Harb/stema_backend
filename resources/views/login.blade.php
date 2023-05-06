@@ -44,7 +44,7 @@
                             </div>
                         </div> <!-- end of row -->
 
-                        <form class="g-3 mt-3" method="POST" action="{{ route('login') }}" >
+                        <form class="g-3 mt-3" method="POST" action="{{ route('postlogin') }}" >
                             @csrf
                             <div class="col-lg-7  mb-3">
                                 <label for="inputUname" class="form-label">UserName</label>

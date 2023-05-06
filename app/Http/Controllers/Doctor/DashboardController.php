@@ -29,6 +29,7 @@ class DashboardController extends Controller
     }
 
     public function cell(){
+        // return auth()->user()->firstname .' '. auth()->user()->lastname;
         return session()->get('cell');
     }
 

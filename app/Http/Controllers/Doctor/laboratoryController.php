@@ -14,37 +14,6 @@ class laboratoryController extends Controller
     }
     public function postlaboratory1(Request $request){
 
-        if(empty($request->session()->get('cell'))){
-            $cell = new Cell();
-            $cell->fill([
-                'quality_of_collection_bags_cleanness'=>$request->quality_of_collection_bags_cleanness,
-                'num_of_needles'=>$request->num_of_needles,
-                'satellite_bag'=>$request->satellite_bag,
-                'clots'=>$request->clots,
-                'net_weight'=>$request->net_weight,
-                'volume'=>$request->volume,
-                'prewbcsx109l'=>$request->prewbcsx109l,
-                'pre_%cd+45/34'=>$request->pre_cd_45_34,
-                'pre_viability_of_tnc'=>$request->pre_viability_of_tnc,
-                'post_wbcsx109/l'=>$request->post_wbcsx109l,
-            ]);
-            $request->session()->put('cell', $cell);
-        }else{
-            $cell = $request->session()->get('cell');
-            $cell->fill([
-                'quality_of_collection_bags_cleanness'=>$request->quality_of_collection_bags_cleanness,
-                'num_of_needles'=>$request->num_of_needles,
-                'satellite_bag'=>$request->satellite_bag,
-                'clots'=>$request->clots,
-                'net_weight'=>$request->net_weight,
-                'volume'=>$request->volume,
-                'prewbcsx109l'=>$request->prewbcsx109l,
-                'pre_%cd+45/34'=>$request->pre_cd_45_34,
-                'pre_viability_of_tnc'=>$request->pre_viability_of_tnc,
-                'post_wbcsx109/l'=>$request->post_wbcsx109l,
-            ]);
-            $request->session()->put('cell', $cell);
-        }
         $response = Http::post('http://127.0.0.1:5000/success', [
             'quality_of_collection_bags_cleanness' =>$request->quality_of_collection_bags_cleanness,
             'num_of_needles'=>$request->num_of_needles,
@@ -57,13 +26,35 @@ class laboratoryController extends Controller
             'pre_viability_of_tnc'=>$request->pre_viability_of_tnc,
             'post_wbcsx109_l'=>$request->post_wbcsx109l,
         ]);
-        $cell = $request->session()->get('cell');
+
+        if(empty($request->session()->get('cell'))){
+            $cell = new Cell();
+        }else{
+            $cell = $request->session()->get('cell');
+        }
+
+        $status = ($response['predictions'][0] == 0) ? "Rejected" : "Approved";
+
         $cell->fill([
-            'test_performed_by'=>auth()->user()->firstname ,' ',auth()->user()->lastname,
-            'result'=>$response['predictions'][0],
-            'approved_status'=>($response['predictions'][0]=='1') ? 'approved' : 'rejected',
+            'quality_of_collection_bags_cleanness'=>$request->quality_of_collection_bags_cleanness,
+            'num_of_needles'=>$request->num_of_needles,
+            'satellite_bag'=>$request->satellite_bag,
+            'clots'=>$request->clots,
+            'net_weight'=>$request->net_weight,
+            'volume'=>$request->volume,
+            'prewbcsx109l'=>$request->prewbcsx109l,
+            'pre_%cd+45/34'=>$request->pre_cd_45_34,
+            'pre_viability_of_tnc'=>$request->pre_viability_of_tnc,
+            'post_wbcsx109/l'=>$request->post_wbcsx109l,
+            'approved_status'   => $status,
+            'result'    =>$response['predictions'][0],
+            'test_performed_by' => auth()->user()->firstname . ' '. auth()->user()->lastname,
         ]);
+
+        $request->session()->put('cell', $cell);
+
         return response()->json(['success' =>$response['predictions'][0]]);
+
     }
 
 
@@ -85,7 +76,6 @@ class laboratoryController extends Controller
                 'pre_average_viable_cd34/cd45_positive_cell_percentage'=>$request->pre_average_viable_cd34_cd45_positive_cell_percentage,
                 'pre_average_viable_absolute_cd34_positive_cell_count'=>$request->pre_average_viable_absolute_cd34_positive_cell_count,
                 'pre_average_viable_cd34_positive_cell_percentage'=>$request->pre_average_viable_cd34_positive_cell_percentage,
-
             ]);
             $request->session()->put('cell', $cell);
         }

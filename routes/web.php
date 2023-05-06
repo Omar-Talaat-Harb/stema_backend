@@ -20,7 +20,7 @@ use App\Http\Controllers\Doctor\laboratoryController;
 Route::get('/',[IndexController::class,'index'])->name('index');
 
 Route::get('/login',[LoginController::class,'login'])->name('login');
-Route::post('/login',[LoginController::class,'loginAccess'])->name('login');
+Route::post('/login',[LoginController::class,'loginAccess'])->name('postlogin');
 
 Route::resource('/admin/user',UserController::class);
 
