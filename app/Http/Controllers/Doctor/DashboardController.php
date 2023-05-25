@@ -13,7 +13,14 @@ class DashboardController extends Controller
     }
 
     public function pending(){
-        return view('dotctor.pending');
+        if(auth()->user()->role_id==2){
+            return redirect()->route('dotctor.pending');
+        }
+        else{
+            //return redirect()->route('####');
+            return'nurse';
+        }
+        
     }
 
     public function disabledregstration(){
