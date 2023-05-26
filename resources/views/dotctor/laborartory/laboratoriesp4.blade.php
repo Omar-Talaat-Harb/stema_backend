@@ -152,7 +152,8 @@
 
                                     <div class=" d-flex inputUnit ms-4 ps-3 ">
                                         <span class="pt-3">*</span>
-                                        <input type="text" class="inputrequiredYes "  id="ApprovedStatuspost"  placeholder="Approved Status" disabled>
+                                        <input type="text" class="inputrequiredYes " disabled name="ApprovedStatus"
+                                        id="ApprovedStatus" placeholder="Approved Status" value="{{ session()->get('cell.approved_status') }}" >
                                     </div>
 
 

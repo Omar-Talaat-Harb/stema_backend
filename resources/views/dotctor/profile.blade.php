@@ -148,7 +148,10 @@
 
                     </form>
                     @if (session()->has('message'))
-                        {{ session()->get('message') }}
+                        <div class="alert alert-success text-center">
+                            {{ session()->get('message') }}
+                        </div>
+                        
                     @endif
                 </div> <!-- form-container -->
 
