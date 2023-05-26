@@ -35,7 +35,11 @@
                     </div> <!-- edite code button -->
 
                     <div class="d-grid mb-3 justify-content-center ">
+                        <form action="/logout" method="POST">
+                            @csrf
                         <button class="btn logout "><i class="fas fa-door-open"></i> Log Out</button>
+                        </form>
+                        
                     </div> <!-- logout  button -->
                 </div>
             </div> <!-- Photo-div -->

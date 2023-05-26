@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Doctor\DashboardController;
 use App\Http\Controllers\Doctor\laboratoryController;
 /*
@@ -21,7 +22,7 @@ Route::get('/',[IndexController::class,'index'])->name('index');
 
 Route::get('/login',[LoginController::class,'login'])->name('login');
 Route::post('/login',[LoginController::class,'loginAccess'])->name('postlogin');
-
+Route::post('/logout',[LogoutController::class,'logout'])->name('logout');
 Route::resource('/admin/user',UserController::class);
 
 Route::get('/services',[DashboardController::class,'services'])->name('services');
