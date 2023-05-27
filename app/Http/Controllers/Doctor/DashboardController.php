@@ -24,6 +24,9 @@ class DashboardController extends Controller
         }
 
     
+        public function statistics(){
+            return view('statistics');
+    }
 
     public function disabledregstration(){
         return view('dotctor.disabled.disabledregstration');

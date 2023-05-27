@@ -27,6 +27,7 @@ Route::resource('/admin/user',UserController::class);
 
 Route::get('/services',[DashboardController::class,'services'])->name('services');
 Route::get('/pending',[DashboardController::class,'pending'])->name('pending');
+Route::get('/statistics',[DashboardController::class,'statistics'])->name('statistics');
 
 Route::get('/laboratory1',[laboratoryController::class,'laboratory1'])->name('laboratory1');
 Route::post('/postlaboratory1',[laboratoryController::class,'postlaboratory1'])->name('postlaboratory1');

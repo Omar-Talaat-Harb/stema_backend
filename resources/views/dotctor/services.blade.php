@@ -76,7 +76,7 @@
         </div> <!-- card2 -->
 
         <div class="col" data-aos="fade-down">
-            <a href="statistics.html" style="text-decoration: none;">
+            <a href="{{ route('statistics') }}" style="text-decoration: none;">
             <div class="card">
                 <img src="{{ asset('assets/images/Vector.png') }}" class="card-img-top" alt="Statistics photo">
                 <div class="card-body">
