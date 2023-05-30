@@ -16,7 +16,7 @@
 
 <body>
 <nav class="navbar navbar-expand-lg ps-3 navbar-light "
-    style="background: linear-gradient(to right, #0EB0BA, #304BAB);">
+    style="background: linear-gradient(to right, #0EB0BA, #3080ab);">
     <div class="container-fluid">
     <a class="navbar-brand ms-5 ps-5" href="#"><img src="{{ asset('assets/images/White logo - no background.png') }}" alt="STEMA"
         width="130px"></a>
@@ -24,21 +24,21 @@
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse ms-5 ps-5" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse ms-5 me-5 ps-5 text-capitalize" id="navbarSupportedContent">
         <!-- <form class="d-flex hstack gap-2 me-5" role="loging">
         <a class="btn ms-auto" href="signup.html" target="_blank">SignUp</a>
         <div class="vr" style="color:white ;"></div>
         <a class="btn" href="login.html" target="_blank">LogIn</a>
         </form> -->
         <div class="d-flex hstack gap-2 ms-auto me-1 user-services">
-        <div class="pt-3 ">
-            <h6>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</h6>
-            <p>
+        <div class="pt-3  me-3">
+            <h6  style="line-height: 0.8;">{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</h6>
+            <p style="font-size:15px;">
                 {{ auth()->user()->role->type }}
             </p>
         </div>
 
-        <a href="{{ route ('showProfile') }}"> <img src="{{ asset('assets/images/mydoctor.jpg') }}"
+        <a href="{{ route ('showProfile') }}"> <img src="{{ asset('assets/images/doctor.svg') }}"
                 alt="user-photo" width="60px" ></a>
 
     </div>

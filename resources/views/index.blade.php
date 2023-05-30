@@ -16,7 +16,7 @@
 
 <body>
 
-    <header>
+    <header id="myheader">
     <nav class="navbar navbar-expand-lg ps-3 navbar-light fixed-top"
         style="background: linear-gradient(to right, #0EB0BA, #304BAB);">
         <div class="container-fluid">
@@ -26,124 +26,208 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse ms-5 ps-5" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-5 ps-5 me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Stem Cells</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Our Projects</a>
-                    </li>
-                    <li class="nav-item"> -->
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
 
-                </ul>
-                <form class="d-flex hstack gap-2 me-5" role="loging">
-                    <!-- <a class="btn ms-auto" href="signup.html" target="_blank">SignUp</a>
-                    <div class="vr" style="color:white ;"></div> -->
-                    <a class="btn" href="{{ route('login') }}" >LogIn</a>
-                </form>
+            <div class="collapse navbar-collapse ms-5 ps-5" id="navbarSupportedContent">
+
+            <ul style="list-style: none;margin-top: 20px;">
+                        <li style=" display: inline-block;margin-right:90px;" class="nav-item">
+                            <a style="text-decoration: none; color: white;text-transform: uppercase;letter-spacing: 2px;" 
+                            class="nav-link" aria-current="page" href="#myheader">Home</a>
+                        </li>
+
+                        <li style=" display: inline-block;margin-right: 90px;" class="nav-item" style="margin-left: 10%;">
+                            <a style="text-decoration: none;color: white;text-transform: uppercase;letter-spacing: 2px;"
+                         class="nav-link" href="#myvideo">Services</a>
+                        </li>
+
+                        <li style=" display: inline-block;margin-right: 90px;" class="nav-item">
+                            <a style="text-decoration: none;color: white;text-transform: uppercase;letter-spacing: 2px;"
+                          class="nav-link" href="#myfooter">Contact Us</a>
+                        </li>
+
+                    </ul>
+                    
+
+
+                
+                <form role="loging" style="position: relative;right:-30%;">
+                        <a class="btn" href="{{ route('login') }}" >Sign in</a>
+                    </form>
             </div>
         </div>
     </nav>
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ asset('assets/images/s1.jpg')}}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('assets/images/s1.jpg') }}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('assets/images/s1.jpg') }}" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+        <header style="
+        margin-top:10%;
+        margin-left: 3%;
+        margin-right: 3%;
+        min-height:70vh;
+        background-image:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url({{ asset('assets/images/s1.jpg') }});
+        background-position: center;
+        background-size: cover;">
+            <div class="container">
+
+                <div style="position: absolute; top: 45%; left:23%; text-align: center;color: white;">
+                    <h2>We carry out world-class research into stem cell matching<br> and transplants to improve
+                        outcomes for all patients</h2>
+                    <a  href="{{ route('login') }}" class="btn" style="margin-top: 4%; width:17%;">learn more</a>
+
+
+                </div><!-- hero-box -->
+            </div><!-- container -->
+
+        </header>
     </header>
 
-    <section id="features">
+    <section id="features" data-aos="fade-up">
         <div class="container">
 
 
-            <div class="row">
+        <div class="row">
+
+<div class="col-lg-3 col-md-3 box ">
+    <img src="{{ asset('assets/images/clock.svg') }}" alt="" srcset=""style="width:65px" >
+    <h3 style="margin-top: 20px;">Diagnosing</h3>
+    <p>Every 14 minutes, someone is diagnosed with blood cancer or a related disorder </p>
+</div><!-- 1 -->
+<div class="col-lg-3 col-md-3 box ">
+    <!-- <i class=" fas fa-solid fa-bone fa-3x"></i> -->
+
+    <img src="{{ asset('assets/images/bone.svg') }}"alt="" srcset="" style="width:60px">
+    <h3 style="margin-top: 20px;">Bone marrow</h3>
+    <p>Over 2,000 people in the UK are in need of a bone marrow or stem cell transplant every year
+
+    </p>
+</div><!-- 2 -->
+
+<div class="col-lg-3 col-md-3 box ">
+    <img src="{{ asset('assets/images/Vector.svg') }}" alt="" srcset="" style="width:65px">
+    <!-- <i class="fas fa-money-bill-wave fa-3x"></i> -->
+    <!-- <link rel="stylesheet" class="f" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+    <h3 style="margin-top: 20px;">Costs</h3>
+    <p>It costs about £40 to recruit each potential donor to the stem cell register
+
+    </p>
+</div><!-- 3 -->
+
+
+</div><!-- row -->
+<div class="row">
+
+<div class="col-lg-3 col-md-3 box ">
+  
+    <img src="{{ asset('assets/images/respond.svg') }}" alt="" srcset="" style="width:65px">
+    <h3 style="margin-top: 20px;">Responds</h3>
+    <p>50% of the patients respond to treatment with these cells. </p>
+</div><!-- 1 -->
+<div class="col-lg-3 col-md-3 box ">
+  
+    <img src="{{ asset('assets/images/donation.svg') }}" alt="" style="width:65px">
+    <h3 style="margin-top: 20px;">Donation</h3>
+    <p>Every day, at least five people start their search for a matching unrelated stem cell donor
+    </p>
+</div><!-- 2 -->
+
+<div class="col-lg-3 col-md-3 box ">
+  
+    <img src="{{ asset('assets/images/conclusion.svg') }}" alt="" srcset="" style="width:65px">
+
+    <h3 style="margin-top: 20px;">Conclusion</h3>
+    <p>75% of UK patients won’t find a matching donor in their families
+
+    </p>
+</div><!-- 3 -->
+
+
+</div><!-- row -->
+
+
+
+            <!-- <div class="row">
 
                 <div class="col-lg-3 col-md-3 box ">
+                <img src="images/clock.svg" alt="" srcset="">
                     <i class="fas fa-clock fa-3x"></i>
                     <h3>Diagnosing</h3>
                     <p>Every 14 minutes, someone is diagnosed with blood cancer or a related disorder </p>
-                </div><!-- 1 -->
-                <div class="col-lg-3 col-md-3 box ">
+                </div> -->
+                <!-- 1 -->
+                <!-- <div class="col-lg-3 col-md-3 box ">
                     <i class=" fas fa-solid fa-bone fa-3x"></i>
                     <h3>Bone marrow</h3>
                     <p>Over 2,000 people in the UK are in need of a bone marrow or stem cell transplant every year
 
                     </p>
-                </div><!-- 2 -->
-
+                </div> -->
+                <!-- 2 -->
+<!-- 
                 <div class="col-lg-3 col-md-3 box ">
                     <i class="fas fa-money-bill-wave fa-3x"></i>
                     <h3>Costs</h3>
                     <p>It costs about £40 to recruit each potential donor to the stem cell register
 
                     </p>
-                </div><!-- 3 -->
+                </div> -->
+                <!-- 3 -->
 
 
-            </div><!-- row -->
-            <div class="row">
+            <!-- </div> -->
+            <!-- row -->
+            <!-- <div class="row">
 
                 <div class="col-lg-3 col-md-3 box ">
                     <i class="fas fa-user-check fa-3x"></i>
                     <h3>Responds</h3>
                     <p>50% of the patients respond to treatment with these cells. </p>
-                </div><!-- 1 -->
-                <div class="col-lg-3 col-md-3 box ">
+                </div> -->
+                <!-- 1 -->
+                <!-- <div class="col-lg-3 col-md-3 box ">
                     <i class="fas fa-hand-holding-heart fa-3x"></i>
                     <h3>Donation</h3>
                     <p>Every day, at least five people start their search for a matching unrelated stem cell donor
                     </p>
-                </div><!-- 2 -->
+                </div> -->
+                <!-- 2 -->
 
-                <div class="col-lg-3 col-md-3 box ">
+            <!-- <div class="col-lg-3 col-md-3 box ">
                     <i class="fas fa-users fa-3x"></i>
 
                     <h3>Conclusion</h3>
                     <p>75% of UK patients won’t find a matching donor in their families
 
                     </p>
-                </div><!-- 3 -->
+                </div>3 -->
 
 
             </div><!-- row -->
         </div><!-- container -->
     </section><!-- features -->
     <!--  -->
+
+
+    <section id="myvideo" data-aos="fade-up"style="text-align:center; margin-top: 5%; ">
+<div class="container">
+<h3 style="margin-bottom: 5px;">Get to know STEMA services</h3>
+<hr style="  width:20%;
+background-color: #0EB0BA;
+border: solid #0EB0BA 4px;
+margin:  15px auto;
+border-radius: 5px;">
+ <img id="mypic"src="{{ asset('assets/images/Color logo with background.png') }}" style="position: absolute;
+cursor: pointer;
+transition: 1s;
+width: 71%;
+height: 500px; border-radius: 15px;" onclick="myfun()">
+    <iframe src="{{ asset('assets/images/servicesvideo.mp4') }}" type="video/mp4" title="Vimeo video"
+   width="80%" height="500px" style="border-radius: 15px;"allow="accelerometer;clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+</div>
+
+   
+
+</section><!--video-->
+
+
+
     <section id="stem" class="py-5">
         <div class="container">
             <div class="row">
@@ -182,7 +266,7 @@
         </div><!-- container -->
     </section><!-- explorer details -->
 
-    <footer class="footer  p-5" data-aos="fade-up"  style="background: #0EB0BA;">
+    <!-- <footer class="footer  p-5" data-aos="fade-up"  style="background: #0EB0BA;">
         <section class="container">
             <div class="row">
 
@@ -191,9 +275,10 @@
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, quia?</p>
 
 
-                </div><!-- 1footerfollow -->
+                </div> -->
+                <!-- 1footerfollow -->
 
-
+<!-- 
                 <div class="col-md-3 pb-1 col-sm-6 text-center footerpages">
                     <h6 class="footer-h6">Pages : </h6>
                     <ul>
@@ -203,9 +288,51 @@
                         <li><a href="indexServices.html">Services</a></a></li>
                         <li><a href="#contact">Contact</a></a></li>
                     </ul>
-                </div><!-- 2 -->
+                </div> -->
+                <!-- 2 -->
 
-                <div class="col-md-3 pb-1 col-sm-6 Contact">
+                <!-- <div class="col-md-3 pb-1 col-sm-6 Contact">
+                    <h6 class="footer-h6" id="contact">Contact Us : </h6>
+                    <div class="">
+                        <p> <i class="fas fa-phone-alt p-1"></i> (406)555-0120</p>
+                        <p> <i class="far fa-envelope p-1"></i> mangcoding123@gmail.com</p>
+                        <p> <i class="fas fa-map-marker-alt p-1"></i> 2972 Westheimer Rd. Santa Ana, Illinois 85486</p>
+                    </div>
+                </div> -->
+                <!-- 3  -->
+
+                <!-- <div class="col-md-3 col-sm-6 text-center footerfollow">
+                    <h6 class="footer-h6">Follow Us : </h6>
+                    <ul class="">
+                        <li><a href="#"><i class="  fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="  fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="  fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="  fab fa-instagram"></i></a></li>
+                    </ul>
+                </div> -->
+                <!-- 4 -->
+
+            <!-- </div> -->
+            <!-- row -->
+        <!-- </section> -->
+         <!-- container footer -->
+    <!-- </footer> -->
+
+
+
+    <footer class="footer  p-5" data-aos="fade-up" style="background: #0EB0BA;" id="myfooter">
+        <section class="container">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-6 pb-2 pr-3" >
+                    <a class="navbar-brand ms-5 ps-5" href="#"><img src="{{ asset('assets/images/White logo - no background.png') }}"
+                            alt="STEMA" width="175px"></a>
+                   
+
+                </div><!-- 1footerfollow -->
+
+
+                <div class="col-md-4 pb-1 col-sm-6 Contact">
                     <h6 class="footer-h6" id="contact">Contact Us : </h6>
                     <div class="">
                         <p> <i class="fas fa-phone-alt p-1"></i> (406)555-0120</p>
@@ -214,7 +341,7 @@
                     </div>
                 </div><!-- 3  -->
 
-                <div class="col-md-3 col-sm-6 text-center footerfollow">
+                <div class="col-md-4 col-sm-6 text-center footerfollow">
                     <h6 class="footer-h6">Follow Us : </h6>
                     <ul class="">
                         <li><a href="#"><i class="  fab fa-facebook"></i></a></li>
@@ -228,6 +355,13 @@
         </section> <!-- container footer -->
     </footer>
 
+
+    <script>
+    var mypic=document.getElementById("mypic")
+    function myfun(){
+        mypic.style.display = "none";
+    }
+</script>
 
     <script src="{{ asset('assets/JS/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/JS/wow.min.js') }}"></script>

@@ -71,7 +71,7 @@
                             <!-- 2 -->
                             <li class="nav-item licoll circ2">
                                 <div class="rr bg-light vertline">
-                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                    <i class="fa fa-check"></i>
                                 </div>
                                 <a href="{{ route('disabledcollection') }}">
                                     <p class="ps-3">Collection</p>
@@ -104,14 +104,14 @@
                             </a>
                         </div> <!-- back button -->
                         <div class="col-lg-1"></div>
-                        <div class="col-lg-5 hstack gap-2  ms-auto user">
+                        <div class="col-lg-10 hstack gap-2  ms-auto user">
                             <div class=" ms-auto ">
+                                
                                 <h6>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</h6>
                                 <p>{{ auth()->user()->role->type }} </p>
-                                
                             </div>
 
-                            <a href="profile.html"> <img src="{{ asset('assets/images/nurse.svg') }}" alt="user-photo" width="60px"></a>
+                            <a href="{{ route('showProfile') }}"> <img src="{{ asset('assets/images/nurse.svg') }}" alt="user-photo" width="60px"></a>
 
                         </div>
                         <div class="col-lg-1"></div>
@@ -120,10 +120,10 @@
                     </div>
                     <div class="row">
                         <div class="d-flex donrhead mt-5">
-                            <div class="col-10" style="color: #0EB0BA;">
+                            <div class="col-9" style="color: #0EB0BA;">
                                 <h1>Donar Data</h1>
                             </div>
-                            <div class="col-2">
+                            <div class="offset-2 col-1">
                                 <p>Page 1 of 2</p>
                             </div>
 
@@ -134,12 +134,12 @@
 
                             <div class="col-6">
 
-                                <div class="d-flex donorform">
+                                <div class="d-flex donorform1">
 
                                     <input type="text" class="form-control myformcontrol mydisable" placeholder="ندى محمد ياسر " required id="entry1" style="margin-right:-10px;" disabled>
                                 </div>
 
-                            <div class="d-flex donorform">
+                            <div class="d-flex donorform1">
 
                                 <input type="text" class="form-control myformcontrol mydisable" placeholder="2056788764332257"required id="entry2"  style="margin-right:-10px;"disabled>
                             </div>
@@ -148,7 +148,7 @@
 
                                 <input type="text" class="form-control myformcontrol mydisable" style="color: gray;" placeholder="30/10/1990" id="entry4"disabled>
 
-                                <select name="RH_system 1" id="RH_system 1" class="form-control myformcontrol mydisable"  style="color: gray;" disabled>
+                                <select name="RH_system 1" id="RH_system 1" class="form-control myformcontrol mydisable" disabled>
 
                                     <option value="C">C</option>
                                     <option value="c">c</option>
@@ -167,7 +167,7 @@
                                 <input type="text" class="form-control myformcontrol mydisable" placeholder="Egyptian" id="entry8"disabled>
                                 <div class="d-flex donorform">
 
-                                    <select name="Blood Group" id="Blood Group" class="form-control myformcontrol mydisable" style="margin-left:10px;color: gray;" disabled>
+                                    <select name="Blood Group" id="Blood Group" class="form-control myformcontrol mydisable" style="margin-left:10px;width:520px;" disabled>
                                         <option value="A">A</option>
                                         <option value="B">B</option>
                                         <option value="AB">AB</option>
@@ -176,14 +176,14 @@
                                     </select>
                                 </div>
 
-                                <select name="RH" id="RH" class="form-control myformcontrol mydisable" style="color: gray;" disabled>
+                                <select name="RH" id="RH" class="form-control myformcontrol mydisable" disabled>
                                     <option value="Negative">Negative</option>
                                     <option value="Positive">Positive</option>
 
 
 
                                 </select>
-                                <select name="RH_system2" id="RH_system2" class="form-control myformcontrol mydisable" style="color: gray;" disabled>
+                                <select name="RH_system2" id="RH_system2" class="form-control myformcontrol mydisable"  disabled>
 
                                     <option value="C">C</option>
                                     <option value="c">c</option>
@@ -194,7 +194,7 @@
 
                                 </select>
                                 <input type="text" class="form-control myformcontrol mydisable" placeholder="Result" id="entry12"disabled>
-                                <div class="offset-9"> <a href="disadledcontactdata.html" class="btn" style="width:100%;">Next</a>
+                                <div class="offset-9"> <a href="{{ route('disabledcbu') }}" class="btn" style="width:100%;">Next</a>
                                 </div>
                             </div>
 

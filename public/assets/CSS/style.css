@@ -66,8 +66,9 @@ header {
     background-color: white;
     margin: 10px auto;
     border-radius: 25px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 40px;
+    padding-bottom:40px;
+    padding-left:25px;
     box-shadow: rgb(209, 209, 209) 5px 5px 50px;
 }
 
@@ -1043,7 +1044,6 @@ footer ul {
     /* text-align: center; */
 }
 
-
 .admin {
     margin-top: 10%;
     font-weight: bold;
@@ -1229,9 +1229,20 @@ select option {
 
 .donorform {
     margin-bottom: -40px;
-    margin-right: -20px;
+    margin-right: -30px;
     margin-left: -10px;
-    width: 100%;
+
+   
+}
+/* .donorform input{
+    border:solid 1px !important;
+} */
+.donorform1 {
+    margin-bottom: -40px;
+    margin-left: -10px;
+    margin-right:7px;
+
+   
 }
 
 .donorform select {
@@ -1241,6 +1252,7 @@ select option {
 .chosefile {
     margin-top: -40px;
     margin-left: 10px;
+    width:101.2%;
 }
 
 .image-upload>input {
@@ -1259,11 +1271,11 @@ select option {
 
 .files input {
     cursor: pointer;
+    
+
 }
-
-
 /**********start collection page 1 *****/
-.collectionf {
+.collectionf{
     background: linear-gradient(179.99deg, #0EB0BA 28.65%, #4496B3 56.25%, #0F70DA 99.99%);
     height: 132vh;
     /* position: fixed; */
@@ -1447,8 +1459,8 @@ select option {
     border: black 1px solid;
     padding: 2px 1px 2px 7px;
     font-weight: 400;
-    font-size: 18px;
-    min-height: 55px;
+    font-size: 17.5px;
+    min-height: 46px;
     width: 520px;
     margin-bottom: 40px;
     border-radius: 5px;
@@ -1459,8 +1471,8 @@ select option {
     border: none;
     padding: 2px 1px 2px 7px;
     font-weight: 400;
-    font-size: 18px;
-    min-height: 50px;
+    font-size: 17.5px;
+    min-height: 44px;
     width: 100%;
 
 }
@@ -1489,11 +1501,14 @@ select option {
     appearance: none;
     padding-left: 13px;
 }
+.aprovdis::placeholder{
+color: gray !important;
+}
 
 /* .selectcollec option{
     text-align: center;
 } */
-.listvessels::after,
+/* .listvessels::after,
 .listNeonatal::after,
 .liststatus::after,
 .listqualitybags::after,
@@ -1517,6 +1532,12 @@ select option {
 .listNeonatal::after {
     position: absolute;
     top: 668px;
+} */
+.selectarrow{
+    color: #706E6E;
+    margin-top: 15px;
+    position: relative;
+    right: 11.5px;
 }
 
 /* .listBabyBloodGroup::after{
@@ -1527,17 +1548,17 @@ select option {
 .listRH::after {
     position: absolute;
     top: 320px;
-} */
+} 
 .liststatus::after {
     position: absolute;
     top: 318px;
-}
+} 
 
-.listqualitybags::after {
+ .listqualitybags::after {
     position: absolute;
     top: 220px;
     right: 45%;
-}
+} 
 
 .listSatellitebag::after {
     position: absolute;
@@ -1549,7 +1570,7 @@ select option {
     position: absolute;
     top: 506px;
     right: 45%;
-}
+} 
 
 .listViability::after {
     position: absolute;
@@ -1567,7 +1588,7 @@ select option {
     position: absolute;
     top: 477px;
     right: 45%;
-}
+} */
 
 .rightcollside label {
     color: black;
@@ -1636,22 +1657,26 @@ select option {
 
 .cald {
     position: relative;
+    margin-top: -5px;
+    right:12px;
 }
 
 .cald1 {
-    position: absolute;
+    /* position: absolute; */
     right: 6.5%;
+    margin-top: -5px;
 }
 
 .cald2 {
-    position: absolute;
+    /* position: absolute; */
     left: 54.5%;
+    margin-top: -5px;
 }
 
 .cald3 {
-    position: absolute;
+    /* position: absolute; */
     right: 100px;
-    top: 193px;
+    top: 191px;
 }
 
 #timeDifference {

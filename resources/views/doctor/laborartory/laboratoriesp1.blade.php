@@ -83,10 +83,10 @@
 
                 <div class="pt-3 col-12 d-flex trightcollection ">
 
-                    <div class="ps-4 pt-3"><a href="collectionp4disable.html" id="prevve"><i
+                    <div class="ps-4 pt-3"><a href="{{ route('disabledcollection') }}" id="prevve"><i
                                 class="fa fa-arrow-left arrowprevee"></i></a> </div>
                     <div class="lilanurse pt-2">
-                        <a href="profile.html" class="text-black text-decoration-none">
+                        <a href="{{ route ('showProfile') }}" class="text-black text-decoration-none">
                             <div class="pe-3 text-capitalize">
                                 <h6>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</h6>
                                 <p>{{ auth()->user()->role->type }}</p>
@@ -107,7 +107,7 @@
                     <form method="POST" id="regForm" class=" ps-2 pb-3">
                         {{-- @method('post') --}}
                         @csrf
-                        <div class="tabb">
+                        <div class="tabb ms-2">
                             <div class="d-flex pt-3 justify-content-between">
                                 <h5 class="ps-1 collh5">Flow Cytometry Lab Data</h5>
                                 <p class="me-1 mt-2 pagenum">Page 1 of 4</p>
@@ -116,10 +116,10 @@
                             <!--1 row -->
                             <div class="col-lg-12  ">
 
-                                <div class="d-flex listqualitybags justify-content-between">
+                                <div class="d-flex  justify-content-between"> <!-- listqualitybags -->
 
-                                    <div class=" d-flex inputUnit me-5 ps-3 ">
-                                        <span class="pt-3 ">*</span>
+                                    <div class=" d-flex inputUnit me-5 ps-2 ">
+                                        <span class="pt-2 ">*</span>
                                         <select  required
                                             class=" inputrequiredYes  selectcollec pe-3" id="qualityofbags" name="quality_of_collection_bags_cleanness">
                                             <option value class="d-none">Quality of collection bags Cleanness</option>
@@ -128,11 +128,12 @@
                                             <option value="0">Bad</option>
                                             <option value="3">Very bad</option>
                                         </select>
+                                        <i class="fa-solid fa-caret-down selectarrow"></i>
 
                                     </div>
 
-                                    <div class=" d-flex inputUnit ms-4 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit ms-4 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes "value="{{ session()->has('cell.volume') ? session()->get('cell.volume') : '' }}" id="VolumeML"
                                             placeholder="Volume (ml)" required name="volume">
                                     </div>
@@ -141,55 +142,57 @@
                                 <!-- 1 -->
 
                                 <div class=" d-flex justify-content-between">
-                                    <div class=" d-flex inputUnit me-5 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit me-5 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="number" class="inputrequiredYes" id="noOfNeedels"
                                             placeholder="No. of needles"value="{{ session()->has('cell.num_of_needles') ? session()->get('cell.num_of_needles') : '' }}" required name="num_of_needles">
                                     </div>
-                                    <div class=" d-flex inputUnit ms-4 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit ms-4 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes " id="PreWBCsx109L"
                                             placeholder="Pre WBCs x 109/L"value="{{ session()->has('cell.prewbcsx109l') ? session()->get('cell.prewbcsx109l') : '' }}" required name="prewbcsx109l">
                                     </div>
 
                                 </div>
                                 <!-- 2 -->
-                                <div class="d-flex listSatellitebag justify-content-between">
+                                <div class="d-flex  justify-content-between">
 
-                                    <div class=" d-flex inputUnit me-5 ps-3 ">
-                                        <span class="pt-3 ">*</span>
+                                    <div class=" d-flex inputUnit me-5 ps-2 ">
+                                        <span class="pt-2 ">*</span>
                                         <select  required
                                             class=" inputrequiredYes  selectcollec pe-3" id="Satellitebag" name="satellite_bag">
                                             <option value class="d-none">Satellite bag</option>
                                             <option value="1">Yes</option>
                                             <option value="0">No</option>
                                         </select>
+                                        <i class="fa-solid fa-caret-down selectarrow"></i>
 
                                     </div>
 
-                                    <div class=" d-flex inputUnit ms-4 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit ms-4 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes " id="PreCD4534"
                                             placeholder="Pre_%CD+45/34"value="{{ session()->has('cell.pre_%cd+45/34') ? session()->get('cell.pre_%cd+45/34') : '' }}" required name="pre_cd_45_34">
                                     </div>
 
                                 </div>
                                 <!-- 3 -->
-                                <div class="d-flex listClots justify-content-between">
+                                <div class="d-flex  justify-content-between"> <!-- listClots -->
 
-                                    <div class=" d-flex inputUnit me-5 ps-3 ">
-                                        <span class="pt-3 ">*</span>
+                                    <div class=" d-flex inputUnit me-5 ps-2 ">
+                                        <span class="pt-2 ">*</span>
                                         <select  required class=" inputrequiredYes  selectcollec pe-3"
                                             id="Clots" name="clots">
                                             <option value class="d-none">Clots</option>
                                             <option value="1">Yes</option>
                                             <option value="0">No</option>
                                         </select>
+                                        <i class="fa-solid fa-caret-down selectarrow"></i>
 
                                     </div>
 
-                                    <div class=" d-flex inputUnit ms-4 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit ms-4 ps2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes " id="PreviabilityTNC"
                                             placeholder="Pre_viability of TNC"value="{{ session()->has('cell.pre_viability_of_tnc') ? session()->get('cell.pre_viability_of_tnc') : '' }}" required name="pre_viability_of_tnc">
                                     </div>
@@ -197,13 +200,13 @@
                                 </div>
                                 <!-- 4 -->
                                 <div class=" d-flex justify-content-between">
-                                    <div class=" d-flex inputUnit me-5 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit me-5 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes" id="Netweightgram"
                                             placeholder="Net weight (gram)"value="{{ session()->has('cell.net_weight') ? session()->get('cell.net_weight') : '' }}" required name="net_weight">
                                     </div>
-                                    <div class=" d-flex inputUnit ms-4 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit ms-4 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes " id="PostWBCsx109L"
                                             placeholder="Post_WBCs x 109/L" value="{{ session()->has('cell.post_wbcsx109/l') ? session()->get('cell.post_wbcsx109/l') : '' }}"required name="post_wbcsx109l">
                                     </div>

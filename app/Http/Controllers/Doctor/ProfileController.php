@@ -50,12 +50,12 @@ class ProfileController extends Controller
                 //     'alert-type' => 'success',
                 //  );
         
-                return redirect()->route('showProfile')->with(['message' => 'updated successfuly']);
+                return redirect()->route('showProfile')->with(['success' => 'updated successfuly']);
             
             } 
             else 
             {
-                session()->flash('message','Old Password is not correct');
+                session()->flash('fail','Old Password is not correct');
                 return redirect()->back();
             }
 

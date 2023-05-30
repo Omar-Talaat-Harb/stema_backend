@@ -53,7 +53,7 @@
                                 <div class="rr bg-light vertline">
                                     <i class="fa fa-check " aria-hidden="true"></i>
                                 </div>
-                                <a href="disabledregstration.html">
+                                <a href="{{ route('disabledregstration') }}">
                                     <p class="ps-3 ">Registration</p>
                                 </a>
                             </li>
@@ -63,7 +63,7 @@
                                 <div class="rr bg-light vertline">
                                     <i class="fa fa-check" aria-hidden="true"></i>
                                 </div>
-                                <a href="disableldCBU.html">
+                                <a href="{{ route('disabledcbu') }}">
                                     <p class="ps-3">CBU Data</p>
                                 </a>
                             </li>
@@ -71,9 +71,9 @@
                             <!-- 2 -->
                             <li class="nav-item licoll circ2">
                                 <div class="rr bg-light vertline">
-                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                    <i class="fa fa-check"></i>
                                 </div>
-                                <a href="collectionp1disable.html">
+                                <a href="{{ route('disabledcollection') }}">
                                     <p class="ps-3">Collection</p>
                                 </a>
                             </li>
@@ -98,20 +98,20 @@
 
             <div class="col-9 files">
                 <div class="container m-auto container-fluid">
-                    <div class="d-flex ">
+                <div class="d-flex ">
                         <div class="col-lg-1 p-4">
-                            <a href="disadledcontactdata.html">
+                            <a href="{{ route('disabledregstration') }}">
                                 <i class="fas fa-arrow-left fa-2x"></i>
                             </a>
                         </div> <!-- back button -->
                         <div class="col-lg-1"></div>
-                        <div class="col-lg-5 hstack gap-2  ms-auto user">
+                        <div class="col-lg-10 hstack gap-2  ms-auto user">
                             <div class=" ms-auto ">
                                 <h6>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</h6>
                                 <p>{{ auth()->user()->role->type }} </p>
                             </div>
 
-                            <a href="profile.html"> <img src="images/nurse.svg" alt="user-photo" width="60px"></a>
+                            <a href="profile.html"> <img src="{{ asset('assets/images/nurse.svg') }}" alt="user-photo" width="60px"></a>
 
                         </div>
                         <div class="col-lg-1"></div>
@@ -133,14 +133,14 @@
                         <div class="row donors">
 
                             <div class="col-6">
-                                <div class="d-flex donorform" style="margin-left:2px;">
+                                <div class="d-flex donorform" style="margin-left:-30px;">
 
-                                    <input type="text" class="form-control myformcontrol mydisable" placeholder="Talkha Hospital"
+                                    <input type="text" class="form-control myformcontrol mydisable" placeholder="Talkha Hospital" style="width:520px;"
                                         required id="entry1" disabled>
                                 </div>
                                 <div class="d-flex">
 
-                                    <select name="Donation type" id="RH_system 1" style="color: gray;" class="form-control myformcontrol"
+                                    <select name="Donation type" id="RH_system 1"  class="form-control myformcontrol"
                                         disabled required>
                                         <option value="Public">Public</option>
                                         <option value="Private">Private</option>
@@ -154,9 +154,9 @@
                                 <input type="number" class="form-control myformcontrol mydisable" placeholder="209908739" disabled
                                     id="entry3">
 
-                                <div class="d-flex" style="margin-top: -41px; margin-left: -10px;">
+                                <div class="d-flex" style="margin-top: -41px;">
 
-                                    <select name="source" id="source"  style="color: gray;" class="form-control myformcontrol" required disabled>
+                                    <select name="source" id="source"  class="form-control myformcontrol" required disabled>
 
                                         <option value="Cord_tissue">Cord Tissue</option>
                                         <option value="Cord_blood">Cord Blood</option>
@@ -172,7 +172,7 @@
 
                                         <div class="image-upload" style="margin-top:55px; margin-right: -40px; z-index: 2;">
                                             <label for="file-input" >
-                                              <img src="images/attach.svg"/>
+                                              <img src="{{ asset('assets/images/attach.svg') }}" />
                                             </label>
 
 
@@ -186,7 +186,7 @@
 
                                     <div class="image-upload" style="margin-top:55px; margin-right: -40px; z-index: 2;">
                                         <label for="file-input" >
-                                          <img src="images/attach.svg"/>
+                                          <img src="{{ asset('assets/images/attach.svg') }}"/>
                                         </label>
 
                                             <input id="file-input" type="file"disabled />
@@ -198,7 +198,7 @@
 
                                     <div class="image-upload" style="margin-top:55px; margin-right: -40px; z-index: 2;">
                                         <label for="file-input" >
-                                          <img src="images/attach.svg"/>
+                                          <img src="{{ asset('assets/images/attach.svg') }}"/>
                                         </label>
 
 
@@ -208,7 +208,7 @@
                                         id="entry6" disabled>
 
                                 </div>
-                                <div class="offset-10"> <a href="collectionp1disable.html" class="btn" style="width:100%;">Next</a>
+                                <div class="offset-10"> <a href="{{ route('disabledcollection') }}" class="btn" style="width:100%;">Next</a>
                                 </div>
                             </div><!--inputs-->
                             <div class="row myfiles">

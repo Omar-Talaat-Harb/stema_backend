@@ -83,7 +83,7 @@
                     <div class="ps-4 pt-3"><a href="{{ route('laboratory1') }}" id="prevve"><i
                                 class="fa fa-arrow-left arrowprevee"></i></a> </div>
                     <div class="lilanurse pt-2">
-                        <a href="profile.html" class="text-black text-decoration-none">
+                        <a href="{{ route ('showProfile') }}" class="text-black text-decoration-none">
                             <div class="pe-3 text-capitalize">
                                 <h6>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</h6>
                                 <p>{{ auth()->user()->role->type }} </p>
@@ -104,7 +104,7 @@
                     <form action="{{ route('postlaboratory2') }}" method="POST" id="regForm" class=" ps-2 pb-3">
                         @method('post')
                         @csrf
-                        <div class="">
+                        <div class="ms-1">
                             <div class="d-flex pt-3 justify-content-between">
                                 <h5 class="ps-1 collh5">Flow Cytometry Lab Data</h5>
                                 <p class="me-1 mt-2 pagenum">Page 2 of 4</p>
@@ -113,17 +113,20 @@
                             <!--1 row -->
                             <div class="col-lg-12  ">
 
-                                <div class="d-flex listqualitybags justify-content-between">
+                                <div class="d-flex  justify-content-between"><!-- listqualitybags -->
 
 
-                                    <select  class=" inputUnit me-5 ps-3  selectcollec pe-3"
+                                    <div class=" d-flex  me-5 ps-1 inputUnit">
+                                     <select  class="inputrequiredYes selectcollec "
                                         id="SampleType" name="sample_type">
                                         <option value class="d-none">Sample Type</option>
                                         <option value="CordTissue">Cord Tissue</option>
                                         <option value="CordBlood">Cord Blood</option>
                                         <option value="AmnioticFluid">Amniotic Fluid</option>
                                         <option value="Other">Other</option>
-                                    </select>
+                                     </select>
+                                     <i class="fa-solid fa-caret-down selectarrow"></i>
+                                    </div>
 
 
 
@@ -141,10 +144,10 @@
                                     <h5 class="ps-1 collh5">Flow Cytometry Pre-Processing Test Results</h5>
                                 </div>
                                 <!-- 2 -->
-                                <div class="d-flex listViability justify-content-between">
+                                <div class="d-flex  justify-content-between"><!-- listViability -->
 
-                                    <div class=" d-flex inputUnit me-5 ps-3 ">
-                                        <span class="pt-3 ">*</span>
+                                    <div class=" d-flex inputUnit me-5 ps-2 ">
+                                        <span class="pt-2 ">*</span>
                                         <select  class=" inputrequiredYes  selectcollec pe-3"
                                             id="Viabilitytechnique" required name="pre_vaiblity_teqniqe">
                                             <option value class="d-none">Viability technique</option>
@@ -152,11 +155,12 @@
                                             <option value="TrepanBlue">Trepan Blue</option>
                                             <option value="Other">Other</option>
                                         </select>
+                                        <i class="fa-solid fa-caret-down selectarrow"></i>
 
                                     </div>
 
-                                    <div class=" d-flex inputUnit ms-4 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit ms-4 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes " id="ViabilityResults"
                                             placeholder="Viability Results" value="{{ session()->has('cell.pre_vaiblity_results') ? session()->get('cell.pre_vaiblity_results') : '' }}"required name="pre_vaiblity_results">
                                     </div>
@@ -165,14 +169,14 @@
                                 <!-- 3 -->
                                 <div class="d-flex  justify-content-between">
 
-                                    <div class=" d-flex inputUnit me-5 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit me-5 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes " id="ViabilityResults"
                                              placeholder="Count of viable cell ( * 10^9 )"value="{{ session()->has('cell.pre_count_of_viable_cell') ? session()->get('cell.pre_count_of_viable_cell') : '' }}" required name="pre_count_of_viable_cell">
                                     </div>
 
-                                    <div class=" d-flex inputUnit ms-4 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit ms-4 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes " id="Dilutionfactor"
                                             placeholder="Dilution factor" value="{{ session()->has('cell.pre_dilution_factor') ? session()->get('cell.pre_dilution_factor') : '' }}"required name="pre_dilution_factor">
                                     </div>
@@ -180,14 +184,14 @@
                                 </div>
                                 <!-- 4 -->
                                 <div class=" d-flex justify-content-between">
-                                    <div class=" d-flex inputUnit me-5 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit me-5 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes" id="Averageviable"
 
                                             placeholder="Average viable CD34 / CD 45 positive cell percentage"value="{{ session()->has('cell.pre_average_viable_cd34/cd45_positive_cell_percentage') ? session()->get('cell.pre_average_viable_cd34/cd45_positive_cell_percentage') : '' }}" required name="pre_average_viable_cd34_cd45_positive_cell_percentage">
                                     </div>
-                                    <div class=" d-flex inputUnit ms-4 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit ms-4 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes " id="Averageviableabsolute"value="{{ session()->has('cell.pre_average_viable_absolute_cd34_positive_cell_count') ? session()->get('cell.pre_average_viable_absolute_cd34_positive_cell_count') : '' }}"
 
                                             placeholder="Average viable absolute CD34 positive cell count * 10^6" required name="pre_average_viable_absolute_cd34_positive_cell_count">
@@ -195,8 +199,8 @@
 
                                 </div>
                                 <!-- 5 -->
-                                <div class=" d-flex inputUnit me-5 ps-3 " style="width: 508px;">
-                                    <span class="pt-3">*</span>
+                                <div class=" d-flex inputUnit me-5 ps-2 " style="width: 508px;">
+                                    <span class="pt-2">*</span>
                                     <input type="text" class="inputrequiredYes" id="AverageviableCD34"value="{{ session()->has('cell.pre_average_viable_cd34_positive_cell_percentage') ? session()->get('cell.pre_average_viable_cd34_positive_cell_percentage') : '' }}"
 
                                         placeholder="Average viable CD34  positive cell percentage" required name="pre_average_viable_cd34_positive_cell_percentage">

@@ -103,7 +103,7 @@
                 </div>
                 <!-- end top right side -->
 
-                <div class="col-lg-12 mt-3 pe-2">
+                <div class="col-lg-12 mt-3 pe-2 ms-2">
 
                     <form action="" id="regForm" class=" ps-2 pb-3">
                         <div class="">
@@ -113,12 +113,12 @@
 
                             </div>
                             <!--1 row -->
-                            <div class="col-lg-12 col-sm-6 ">
+                            <!-- <div class="col-lg-12 col-sm-6 ">
                                 <div class="d-flex">
                                     <input type="text" class="inputUnit divofform ps-3" id="cordLength"
-                                        name="cordLength" placeholder="Cord Length" disabled>
+                                        name="cordLength" placeholder="Cord Length" disabled style="border:1px solid #cccccc; padding-top:0px !important;">
                                     <input type="text" class="inputUnit ps-3 " id="placentalWeight"
-                                        name="placentalWeight" placeholder="Placental Weight" disabled>
+                                        name="placentalWeight" placeholder="Placental Weight" disabled style="border:1px solid #cccccc; padding-top:0px !important;">
                                 </div>
 
                                 <div class=" d-flex">
@@ -129,9 +129,26 @@
 
 
                                 </div>
+                            </div> -->
+                            <div class="col-lg-12 col-sm-6 ">
+                                <div class="d-flex justify-content-between">
+                                    <input type="text" class="inputUnit me-4 ps-3 form-control " id="cordLength"
+                                        name="cordLength" placeholder="Cord Length" disabled  style="border:1px solid #cccccc; ">
+                                    <input type="text" class="inputUnit ps-3 form-control" id="placentalWeight"
+                                        name="placentalWeight" placeholder="Placental Weight" disabled style="border:1px solid #cccccc; ">
+                                </div>
+
+                                <div class=" d-flex justify-content-between">
+                                    <input type="text" class="inputUnit ps-3 form-control" id="cordPathology"
+                                        name="cordPathology" placeholder="Cord Pathology " disabled style="border:1px solid #cccccc; ">
+                                    <input type="text" name="" class="inputUnit selectcollec form-control pe-3" id="cordVessels" style="border:1px solid #cccccc; "
+                                        disabled placeholder="Cord has three Vessels ">
+
+
+                                </div>
                             </div>
                             <!-- end form1 -->
-                            <div class="d-flex radiocollection ">
+                            <!-- <div class="d-flex radiocollection ">
                                 <h5 class="ps-1 collh5">Neonatal Eligibility Criteria </h5>
                                 <p class="ms-5 mt-2 fw-bold"><span style="color:red;">*</span> Are there any infectious
                                     diseases?</p>
@@ -141,11 +158,21 @@
                                     <input type="radio" id="no" name="infectiousDiseases" value="no" disabled>
                                     <label for="no">No</label>
                                 </div>
+                            </div>top form2 -->
+                            <div class="d-flex radiocollection ">
+                                <h5 class="ps-1 collh5">Neonatal Eligibility Criteria </h5>
+                                <p class="ms-5 mt-2 fw-bold"> Are there any infectious
+                                    diseases?</p>
+                                <div class="ms-4 mt-2 ">
+                                    <input type="radio" id="yes" name="infectiousDiseases" value="yes" disabled checked>
+                                    <label for="yes" class="me-3">Yes</label>
+                                    <input type="radio" id="no" name="infectiousDiseases" value="no" disabled>
+                                    <label for="no">No</label>
+                                </div>
                             </div><!--top form2-->
-                            <div class="col-lg-12 col-sm-6 ">
+                            <!-- <div class="col-lg-12 col-sm-6 ">
 
-                                <!-- <input type="text" class="inputUnit  divofform ps-3" id="" name=""
-                                    placeholder="Specify your answer" required style="width: 99.75%;"> -->
+                               
                                 <div class=" d-flex inputUnit ps-3" style="width: 100%; ">
                                     <span class="pt-3">*</span>
                                     <input type="text" class="inputrequiredYes" placeholder="Specify your answer"
@@ -164,11 +191,7 @@
                                         disabled name="NeonatalordeOfBirth" placeholder="Neonatal order of Birth ">
                                     <input type="text" name="" class="inputUnit selectcollec pe-3" id="NeonatalGender"
                                         disabled placeholder="Neonatal gender ">
-                                    <!-- <select name="" class="inputUnit selectcollec pe-3" id="NeonatalGender"disabled>
-                                        <option value class="d-none">Neonatal gender</option>
-                                        <option value="male" selected >Male</option>
-                                        <option value="female">Female</option>
-                                    </select> -->
+                                   
 
                                 </div>
                                 <div class="d-flex">
@@ -177,11 +200,45 @@
                                     <input type="text" disabled class="inputUnit ps-3 " id="NeonatalChest"
                                         name="NeonatalChest" placeholder="Neonatal Chest measurement">
                                 </div>
+                            </div> -->
+                            <div class="col-lg-12 col-sm-6 ">
+
+                                <div class=" d-flex inputUnit ps-3 " style="width: 100%; border:1px solid #cccccc !important ;background-color: #e9ecef;height: 30px;">
+                                    
+                                    <input type="text" class="inputrequiredYes form-control " placeholder="Specify your answer"
+                                        disabled style="min-height: 20px !important;">
+                                </div>
+
+                                <div class="d-flex">
+                                    <input type="text" class="inputUnit divofform ps-3 form-control " id="NeonatalApgarScore1m"
+                                        disabled name="NeonatalApgarScore1m"
+                                        placeholder="Neonatal Apgar Score (1 min )" style="border:1px solid #cccccc; ">
+                                    <input type="text" class="inputUnit ps-3 form-control " id="NeonatalApgarScore10m" disabled
+                                        name="NeonatalApgarScore10m" placeholder="Neonatal Apgar Score (10 min )" style="border:1px solid #cccccc; font-size: 17.5px; ">
+                                </div>
+                                <div class=" d-flex ">
+                                    <input type="text" class="inputUnit divofform ps-3 form-control " id="NeonatalordeOfBirth"
+                                        disabled name="NeonatalordeOfBirth" placeholder="Neonatal order of Birth " style="border:1px solid #cccccc; ">
+                                    <input type="text" name="" class="inputUnit selectcollec pe-3 form-control " id="NeonatalGender"
+                                        disabled placeholder="Neonatal gender " style="border:1px solid #cccccc;font-size: 17px; ">
+                                    <!-- <select name="" class="inputUnit selectcollec pe-3" id="NeonatalGender"disabled>
+                                        <option value class="d-none">Neonatal gender</option>
+                                        <option value="male" selected >Male</option>
+                                        <option value="female">Female</option>
+                                    </select> -->
+
+                                </div>
+                                <div class="d-flex">
+                                    <input type="text" disabled class="inputUnit divofform ps-3 form-control " id="NeonatalHead"
+                                        name="NeonatalHead" placeholder="Neonatal Head Circumference"style="border:1px solid #cccccc; ">
+                                    <input type="text" disabled class="inputUnit ps-3 form-control " id="NeonatalChest"
+                                        name="NeonatalChest" placeholder="Neonatal Chest measurement" style="border:1px solid #cccccc; " >
+                                </div>
                             </div>
 
                         </div>
                         <!-- tab 1-->
-                        <div><a href="collectionp2disable.html" class="btn mt-4 px-5 "
+                        <div><a href="{{ route('laboratory1') }}" class="btn mt-4 px-5 "
                                 style="font-size: 17px;margin-left:84%;width: 170px;">Next</a></div>
 
 

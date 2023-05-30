@@ -83,7 +83,7 @@
                     <div class="ps-4 pt-3"><a href="{{ route('laboratory3') }}" id="prevve"><i
                                 class="fa fa-arrow-left arrowprevee"></i></a> </div>
                     <div class="lilanurse pt-2">
-                        <a href="profile.html" class="text-black text-decoration-none">
+                        <a href="{{ route ('showProfile') }}" class="text-black text-decoration-none">
                             <div class="pe-3 text-capitalize">
                                 <h6>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</h6>
                                 <p>{{ auth()->user()->role->type }}</p>
@@ -114,8 +114,8 @@
                             <div class="col-lg-12  ">
 
 
-                                <div class=" d-flex inputUnit me-5 ps-3 " style="width: 100%;">
-                                    <span class="pt-3">*</span>
+                                <div class=" d-flex inputUnit me-5 ps-2 " style="width: 100%;">
+                                    <span class="pt-2">*</span>
                                     <input type="text" class="inputrequiredYes" id="countCalculatepost"
 
                                         placeholder="Count of CD34 positive cell preprocessing=Average viable CD34  positive cell percentage * TNC preprocessing" required name="post_count_of_cd34_positive_cell_preprocessing">
@@ -125,9 +125,9 @@
 
                                 <div class="d-flex  justify-content-between">
 
-                                    <div class=" d-flex inputUnit me-5 ps-3 ">
-                                        <span class="pt-3">*</span>
-                                        <input type="text" class="inputrequiredYes " id="TestPerformedBypost"
+                                    <div class=" d-flex inputUnit me-5 ps-2 ">
+                                        
+                                        <input type="text" class="inputrequiredYes aprovdis" id="TestPerformedBypost"
                                         placeholder="{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}" disabled>
                                     </div>
 
@@ -150,10 +150,10 @@
                                         </div>
                                     </div> -->
 
-                                    <div class=" d-flex inputUnit ms-4 ps-3 ">
-                                        <span class="pt-3">*</span>
-                                        <input type="text" class="inputrequiredYes " disabled name="ApprovedStatus"
-                                        id="ApprovedStatus" placeholder="Approved Status" value="{{ session()->get('cell.approved_status') }}" >
+                                    <div class=" d-flex inputUnit ms-4 ps-2 ">
+                                        
+                                        <input type="text" class="inputrequiredYes aprovdis" disabled name="ApprovedStatus"
+                                        id="ApprovedStatus" placeholder="Approved Status" value="{{ session()->get('cell.approved_status') }}"  >
                                     </div>
 
 

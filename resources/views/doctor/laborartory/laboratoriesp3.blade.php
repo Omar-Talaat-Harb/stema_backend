@@ -83,7 +83,7 @@
                     <div class="ps-4 pt-3"><a href="{{ route('laboratory2') }}" id="prevve"><i
                                 class="fa fa-arrow-left arrowprevee"></i></a> </div>
                     <div class="lilanurse pt-2">
-                        <a href="profile.html" class="text-black text-decoration-none">
+                        <a href="{{ route ('showProfile') }}" class="text-black text-decoration-none">
                             <div class="pe-3 text-capitalize">
                                 <h6>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</h6>
                                 <p>{{ auth()->user()->role->type }} </p>
@@ -104,7 +104,7 @@
                     <form action="{{ route('postlaboratory3') }}" method="POST" id="regForm" class=" ps-2 pb-3">
                         @method('post')
                         @csrf
-                        <div class="">
+                        <div class="ms-1">
                             <div class="d-flex pt-3 justify-content-between">
                                 <h5 class="ps-1 collh5">Flow Cytometry Pre-Processing Test Results</h5>
                                 <p class="me-1 mt-2 pagenum">Page 3 of 4</p>
@@ -114,8 +114,8 @@
                             <div class="col-lg-12  ">
 
 
-                                <div class=" d-flex inputUnit me-5 ps-3 " style="width: 100%;">
-                                    <span class="pt-3">*</span>
+                                <div class=" d-flex inputUnit me-5 ps-2 " style="width: 100%;">
+                                    <span class="pt-2">*</span>
                                     <input type="text" class="inputrequiredYes" id="countCalculate"
                                         placeholder="Count of CD34 positive cell preprocessing=Average viable CD34  positive cell percentage * TNC preprocessing" required
                                         value="{{ session()->has('cell.pre_count_of_cd34_positive_cell_preprocessing') ? session()->get('cell.pre_count_of_cd34_positive_cell_preprocessing') : '' }}"name="pre_count_of_cd34_positive_cell_preprocessing">
@@ -125,10 +125,10 @@
 
                                 <div class="d-flex  justify-content-between">
 
-                                    <div class=" d-flex inputUnit me-5 ps-3 ">
-                                        <span class="pt-3">*</span>
-                                        <input type="text" class="inputrequiredYes " disabled id="TestPerformedBy"
-                                            name="TestPerformedBy" placeholder="{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}"  >
+                                    <div class=" d-flex inputUnit me-5 ps-2 ">
+                                        
+                                        <input type="text" class="inputrequiredYes aprovdis" disabled id="TestPerformedBy"
+                                            name="TestPerformedBy" placeholder="{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}"   >
                                     </div>
 
                                     <!-- <div class=" d-flex inputUnit ms-4 ps-3 ">
@@ -149,9 +149,9 @@
 
                                         </div>
                                     </div> -->
-                                    <div class=" d-flex inputUnit ms-4 ps-3 ">
-                                        <span class="pt-3">*</span>
-                                        <input type="text" class="inputrequiredYes " disabled name="ApprovedStatus"
+                                    <div class=" d-flex inputUnit ms-4 ps-2 ">
+                                        
+                                        <input type="text" class="inputrequiredYes aprovdis" disabled name="ApprovedStatus"
                                         id="ApprovedStatus" placeholder="Approved Status" value="{{ session()->get('cell.approved_status') }}" >
                                     </div>
 
@@ -176,10 +176,10 @@
                                     <h5 class="ps-1 collh5">Flow Cytometry Post-Processing Test Results</h5>
                                 </div>
                                 <!-- 4 -->
-                                <div class="d-flex listViabilitypost justify-content-between">
+                                <div class="d-flex  justify-content-between"><!-- listViabilitypost -->
 
-                                    <div class=" d-flex inputUnit me-5 ps-3 ">
-                                        <span class="pt-3 ">*</span>
+                                    <div class=" d-flex inputUnit me-5 ps-2 ">
+                                        <span class="pt-2 ">*</span>
                                         <select
                                             class=" inputrequiredYes  selectcollec pe-3" id="Viabilitytechniquepost" required name="post_vaiblity_teqniqe">
                                             <option value class="d-none">Viability technique</option>
@@ -187,11 +187,12 @@
                                             <option value="TrepanBlue">Trepan Blue</option>
                                             <option value="Other">Other</option>
                                         </select>
+                                        <i class="fa-solid fa-caret-down selectarrow"></i>
 
                                     </div>
 
-                                    <div class=" d-flex inputUnit ms-4 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit ms-4 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes " id="ViabilityResultspost"
                                             placeholder="Viability Results"value="{{ session()->has('cell.post_vaiblity_results') ? session()->get('cell.post_vaiblity_results') : '' }}" required name="post_vaiblity_results">
                                     </div>
@@ -200,14 +201,14 @@
                                 <!-- 5 -->
                                 <div class="d-flex  justify-content-between">
 
-                                    <div class=" d-flex inputUnit me-5 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit me-5 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes " id="ViabilityResultspost"
                                              placeholder="Count of viable cell ( * 10^9 )" value="{{ session()->has('cell.post_count_of_viable_cell') ? session()->get('cell.post_count_of_viable_cell') : '' }}"required name="post_count_of_viable_cell">
                                     </div>
 
-                                    <div class=" d-flex inputUnit ms-4 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit ms-4 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes " id="Dilutionfactorpost"
                                             placeholder="Dilution factor"value="{{ session()->has('cell.post_dilution_factor') ? session()->get('cell.post_dilution_factor') : '' }}" required name="post_dilution_factor">
                                     </div>
@@ -215,14 +216,14 @@
                                 </div>
                                 <!-- 6 -->
                                 <div class=" d-flex justify-content-between">
-                                    <div class=" d-flex inputUnit me-5 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit me-5 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes" id="Averageviablepost"
 
                                             placeholder="Average viable CD34 / CD 45 positive cell percentage"value="{{ session()->has('cell.post_average_viable_cd34/cd45_positive_cell_percentage') ? session()->get('cell.post_average_viable_cd34/cd45_positive_cell_percentage') : '' }}" required name="post_average_viable_cd34_cd45_positive_cell_percentage">
                                     </div>
-                                    <div class=" d-flex inputUnit ms-4 ps-3 ">
-                                        <span class="pt-3">*</span>
+                                    <div class=" d-flex inputUnit ms-4 ps-2 ">
+                                        <span class="pt-2">*</span>
                                         <input type="text" class="inputrequiredYes " id="Averageviableabsolutepost"
 
                                             placeholder="Average viable absolute CD34 positive cell count * 10^6"value="{{ session()->has('cell.post_average_viable_absolute_cd34_positive_cell_count') ? session()->get('cell.post_average_viable_absolute_cd34_positive_cell_count') : '' }}" required name="post_average_viable_absolute_cd34_positive_cell_count">
@@ -230,8 +231,8 @@
 
                                 </div>
                                 <!-- 5 -->
-                                <div class=" d-flex inputUnit me-5 ps-3 "style="width: 508px;">
-                                    <span class="pt-3">*</span>
+                                <div class=" d-flex inputUnit me-5 ps-2 "style="width: 508px;">
+                                    <span class="pt-2">*</span>
                                     <input type="text" class="inputrequiredYes" id="AverageviableCD34post"value="{{ session()->has('cell.post_average_viable_cd34_positive_cell_percentage') ? session()->get('cell.post_average_viable_cd34_positive_cell_percentage') : '' }}"
 
                                         placeholder="Average viable CD34  positive cell percentage" required name="post_average_viable_cd34_positive_cell_percentage">

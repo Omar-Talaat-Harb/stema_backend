@@ -22,7 +22,7 @@
 <nav class="navbar navbar-expand-lg ps-3 navbar-light fixed-top"
     style="background: linear-gradient(to right,#0EB0BA, #3080ab);">
     <div class="container-fluid">
-    <a class="navbar-brand ms-5 ps-5" href="#"><img src="{{ asset('assets/images/White logo - no background.png') }}" alt="STEMA"
+    <a class="navbar-brand ms-5 ps-5" href="{{ route('services') }}"><img src="{{ asset('assets/images/White logo - no background.png') }}" alt="STEMA"
         width="100px"></a>
 
     <div class="collapse navbar-collapse ms-5 ps-5" id="navbarSupportedContent">
@@ -35,7 +35,7 @@
 
     <div class="pt-3">
 
-        <a href="profile.html" class="text-black text-decoration-none d-flex ">
+        <a href="{{ route('showProfile') }}" class="text-black text-decoration-none d-flex ">
         <div class="pe-3 text-capitalize text-light">
             <h6>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</h6>
             <p>{{ auth()->user()->role->type }} </p>
