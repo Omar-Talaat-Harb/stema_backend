@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Http;
 class laboratoryController extends Controller
 {
     public function laboratory1(){
-        return view('dotctor.laborartory.laboratoriesp1');
+        return view('doctor.laborartory.laboratoriesp1');
     }
     public function postlaboratory1(Request $request){
 
@@ -59,7 +59,7 @@ class laboratoryController extends Controller
 
 
     public function laboratory2(){
-        return view('dotctor.laborartory.laboratoriesp2');
+        return view('doctor.laborartory.laboratoriesp2');
     }
     public function postlaboratory2(Request $request){
 
@@ -99,7 +99,7 @@ class laboratoryController extends Controller
     }
 
     public function laboratory3(){
-        return view('dotctor.laborartory.laboratoriesp3');
+        return view('doctor.laborartory.laboratoriesp3');
     }
 
     public function postlaboratory3(Request $request){
@@ -135,7 +135,7 @@ class laboratoryController extends Controller
     }
 
     public function laboratory4(){
-        return view('dotctor.laborartory.laboratoriesp4');
+        return view('doctor.laborartory.laboratoriesp4');
     }
 
     public function postlaboratory4(Request $request){

@@ -15,7 +15,7 @@ class ProfileController extends Controller
 
         $userId = Auth::user()->id;
         $userData = User::find($userId);
-        return view ('dotctor.profile',compact('userData'));
+        return view ('doctor.profile',compact('userData'));
     }
 
     public function updateProfile(Request $request)

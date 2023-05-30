@@ -25,7 +25,7 @@
           <div class="col-lg-1 sidebar">
               <div class="container m-auto p-1 ">
                   <div class="mt-2 p-3 mb-5 pb-5">
-                      <a href="index.html"><img src="{{ asset('assets/images/White logo - no background-no name.svg') }}" alt="STEMA-Logo"
+                      <a href="{{ route('services') }}"><img src="{{ asset('assets/images/White logo - no background-no name.svg') }}" alt="STEMA-Logo"
                               width="50px"></a>
 
 
@@ -38,7 +38,7 @@
               <div class="container m-auto">
                 <div class="row d-flex ">
                     <div class="col-lg-1 p-4 mt-2">
-                        <a href="services.html">
+                        <a href="{{ route('services') }}">
                             <i class="fas fa-arrow-left fa-2x"></i>
                         </a>
                     </div> <!-- back button -->
@@ -50,13 +50,11 @@
                     <div class="col-lg-1"></div>
                     <div class="col-lg-5 hstack gap-2  ms-auto user">
                         <div class=" ms-auto mt-4">
-                            <h6>Dr/ Ali Mohammed</h6>
-                            <p class="text-muted">
-                                Regenerative medicine specialist
-                            </p>
+                            <h6>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</h6>
+                            <p>{{ auth()->user()->role->type }} </p>
                         </div>
                         <div class="hstack gap-2 ">
-                            <a href="profile.html"> <img src="{{ asset('assets/images/doctor.svg') }}" alt="user-photo" width="60px"></a>
+                            <a href="{{ route('showProfile') }}"> <img src="{{ asset('assets/images/doctor.svg') }}" alt="user-photo" width="60px"></a>
 
                         </div>
 
@@ -73,7 +71,7 @@
                           <img class="p-2 m-3 accpt" src="{{ asset('assets/images/accepted.svg') }}" width="20%" height="60%">
                           <div class="m-1">
                               <p class="text-muted p-0 m-0">Accepted data</p>
-                              <p class="p-0" style="font-size: 30px;">24 <img src="{{ asset('assets/images/accepted-arrow.png') }}" alt="">
+                              <p class="p-0" style="font-size: 30px;">{{ $data['approved'] }}<img src="{{ asset('assets/images/accepted-arrow.png') }}" alt="">
                               </p>
 
                           </div>
@@ -85,7 +83,7 @@
                           <img src="{{ asset('assets/images/rejected.svg') }}" class="p-2 m-3 rejct" width="20%" height="60%">
                           <div class=" m-1">
                               <p class="text-muted p-0 m-0">Rejected data</p>
-                              <p class="p-0" style="font-size: 30px;">28 <img src="{{ asset('assets/images/rejected-arrow.png') }}" alt="">
+                              <p class="p-0" style="font-size: 30px;">{{ $data['rejected'] }} <img src="{{ asset('assets/images/rejected-arrow.png') }}" alt="">
                               </p>
 
                           </div>
@@ -161,12 +159,12 @@
           var max_t=200;
           
         //volume stem cells
-          var volume1=20;
-          var volume2=40;
-          var volume3=15;
-          var volume4=10;
-          var volume5=15;
-          var total =100; 
+          var volume1={{ $data['volume1'] }} ;
+          var volume2={{ $data['volume2'] }};
+          var volume3={{ $data['volume3'] }};
+          var volume4={{ $data['volume4'] }};
+          var volume5={{ $data['volume5'] }};
+          var total = volume1 + volume2 + volume3 + volume4 +volume5; 
           //total and volumes from ML data
           
           var chart = anychart.pie([
@@ -252,28 +250,28 @@
           var min_z=20;
           var max_z=30;
 
-          var min_a=40;
-          var max_a=50;
+          var min_a=30;
+          var max_a=40;
 
-          var min_d=50;
-          var max_d=60;
+          var min_d=40;
+          var max_d=50;
             //دي اللي هجيبها من منه
-          var min_t=60;
-          var max_t=70;
+          var min_t=50;
+          var max_t=60;
 
-          var min_m=70;
-          var max_m=80;
+          var min_m=60;
+          var max_m=70;
 
           
       //دي اللي هجيبها من الماشين
       //اعرف عدد الكولمنز او الاعمدة من مننه
-          var value1=1;
-          var value2=9;
-          var value3=10;
-          var value4=24;
-          var value5=15;
-          var value6=7;
-          var value7=11;
+          var value1={{ $data['WBCs1'] }};
+          var value2={{ $data['WBCs2'] }};
+          var value3={{ $data['WBCs3'] }};
+          var value4={{ $data['WBCs4'] }};
+          var value5={{ $data['WBCs5'] }};
+          var value6={{ $data['WBCs6'] }};
+          var value7={{ $data['WBCs7'] }};
           
           
   //   create data

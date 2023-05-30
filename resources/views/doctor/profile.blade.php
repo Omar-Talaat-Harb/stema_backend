@@ -26,7 +26,7 @@
                             <img src="{{ asset('assets/images/2-uncropped.jpg') }}" alt="profile photo" class="profile-photo">
                         </div>
                     </center>
-                    <h5 style="color: #0EB0BA; text-align: center; margin: 5%; font-weight: lighter;">Dr\ {{$userData->firstname}}
+                    <h5 style="color: #0EB0BA; text-align: center; margin: 5%; font-weight: lighter;">{{ auth()->user()->role->type }} \ {{$userData->firstname}}
                     </h5>
                     <p style=" text-align: center; margin: 5%;">Regenerative medicine specialist</p>
 
@@ -67,7 +67,7 @@
                             </ul>
 
                         </div>
-                        <a class="d-flex hstack gap-2 me-5 " href="index.html"><img
+                        <a class="d-flex hstack gap-2 me-5 " href="{{ route('services') }}"><img
                                 src="{{ asset('assets/images/Color logoo - no background.svg') }}" alt="STEMA" width="120px"></a>
                     </div>
                 </nav> <!-- naav -->

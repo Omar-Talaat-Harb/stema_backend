@@ -89,8 +89,8 @@
                     <div class="lilanurse pt-2">
                         <a href="profile.html" class="text-black text-decoration-none">
                             <div class="pe-3 text-capitalize">
-                                <h6>Ali Mohammed</h6>
-                                <p>Regenerative medicine specialist </p>
+                                <h6>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</h6>
+                                <p>{{ auth()->user()->role->type }} </p>
                             </div>
 
                             <div class="">
