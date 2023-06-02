@@ -361,7 +361,7 @@
             },true);
             /////////////////////////////////
             console.log(valluee);
-            if (valluee >= 1) {
+            if (valluee == 0) {
                 function acceptfun() {
                     waitting.style.display = "none";
                     accept.style.display = "block"

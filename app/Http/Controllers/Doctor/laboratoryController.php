@@ -33,7 +33,7 @@ class laboratoryController extends Controller
             $cell = $request->session()->get('cell');
         }
 
-        $status = ($response['predictions'][0] == 0) ? "Rejected" : "Approved";
+        $status = ($response['predictions'][0] == 1) ? "Rejected" : "Approved";
 
         $cell->fill([
             'quality_of_collection_bags_cleanness'=>$request->quality_of_collection_bags_cleanness,
